@@ -6,8 +6,8 @@ class ProvinceModel{
 
   factory ProvinceModel.fromJson(Map<String, dynamic> json){
     return ProvinceModel(
-      json["keyword"],
-      json["fullname"],
+      json["keyWord"],
+      json["fullName"],
     );
   }
 
