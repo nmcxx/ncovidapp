@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -16,10 +19,12 @@ class CovidService{
   }
 
   Future<CovidSummaryModel> getSummaryData() async{
-    final data = await http.Client().get("http://10.0.3.2:8080/api/ncovid");
+    final data = await http.Client().get("http://192.168.1.115:8080/api/ncovid");
+
 
     if(data.statusCode != 200)
       throw Exception();
+
 
     CovidSummaryModel summary = new CovidSummaryModel.fromJson(json.decode(data.body));
     return summary;
